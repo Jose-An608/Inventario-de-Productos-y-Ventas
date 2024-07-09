@@ -56,7 +56,22 @@ void registrarProducto(){
 	productos.push_back(p);
 }
 
+void listarProductos(){
 
+if(productos.empty()){
+	
+	cout << "No hay productos por el momento. " << endl;
+	return; 
+    
+	}
+    
+	for(int i = 0; i < productos.size(); i++) {
+    
+		cout << "Nombre: "<<productos[i].nombre << endl;
+		cout << "Precio: $" << productos[i].precio << endl;
+	
+	}
+}
 int main(){
 	int dc,m;
 	SetConsoleOutputCP(CP_UTF8);
@@ -85,10 +100,12 @@ int main(){
 		switch(m) {
 			
 			case 1: 
-			registrarProducto(); // Agregando la funcionalidad de registrar nuevo producto.
+			registrarProducto();
 			break;
 			
 			case 2: 
+			listarProductos(); //Agregando funcionalidad de listar productos
+
 			break;
 			
 			case 3:
