@@ -107,6 +107,38 @@ void buscarProducto(){
 	}	
 	
 }
+
+void actualizarDatosProducto(){
+	string nombreBuscar;
+	
+	cin.ignore();
+	
+	cout << "Digite el nombre del producto que deseas actualizar: " << endl;
+	getline(cin, nombreBuscar);
+	
+	cout << endl;
+	
+	int i = buscarProducto(nombreBuscar);	
+	
+	if( i != -1){
+	
+		cout << "El producto fue encontrado: " << endl;
+		cout << "Nombre: " << productos[i].nombre << endl;
+		cout << "Precio: " << productos[i].precio << endl << endl;
+		
+		cout << "Digite el nuevo nombre del producto: " << endl;
+		getline(cin, productos[i].nombre);
+		
+		cout << "Digíte su nuevo precio: " << endl;
+		cin >> productos[i].precio;
+	
+	} else {
+		
+		cout << "El producto no fue encontrado. " << endl;
+		
+	}
+	
+}
 int main(){
 	int dc,m;
 	SetConsoleOutputCP(CP_UTF8);
@@ -143,11 +175,12 @@ int main(){
 			break;
 			
 			case 3:
-			buscarProducto(); //Agregando funcionalidad de buscar producto
-
+			buscarProducto(); 
 			break;
 			
 			case 4: 
+			actualizarDatosProducto(); //Se agrega la funcionalidad de actualizar datos del producto
+
 			break;
 			
 			case 5:
