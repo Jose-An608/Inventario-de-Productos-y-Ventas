@@ -139,6 +139,29 @@ void actualizarDatosProducto(){
 	}
 	
 }
+
+void eliminarProducto(){
+	string nombreBuscar;
+	
+	cin.ignore();
+
+	cout << "Digite el nombre del producto que quieres eliminar: " << endl;
+	getline(cin, nombreBuscar);
+		
+	int indice = buscarProducto(nombreBuscar);
+	
+	if ( indice != -1) {
+		productos.erase(productos.begin() + indice);
+		
+		cout << "El producto fue eliminado" << endl;
+		
+	}else{
+		cout << "El producto no fue encontrado" << endl;
+		
+	}
+		
+}
+
 int main(){
 	int dc,m;
 	SetConsoleOutputCP(CP_UTF8);
@@ -179,11 +202,12 @@ int main(){
 			break;
 			
 			case 4: 
-			actualizarDatosProducto(); //Se agrega la funcionalidad de actualizar datos del producto
-
+			actualizarDatosProducto(); 
 			break;
-			
+
 			case 5:
+			eliminarProducto(); //Se agrega la funcionalidad de eliminar un producto.
+
 			break;
 			
 			case 6: 
