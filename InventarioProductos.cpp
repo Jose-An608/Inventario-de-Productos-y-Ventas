@@ -39,6 +39,14 @@ struct Venta{
 vector <Producto> productos;
 vector <Venta> ventas;
 
+int buscarProducto(const string& nombreBuscado) {
+	for (int i = 0; i < productos.size(); i++){
+		if (productos[i].nombre == nombreBuscado) {
+			return i;
+		}
+	}
+	return -1;
+}
 void registrarProducto(){
 	Producto p;
 	
@@ -72,6 +80,33 @@ if(productos.empty()){
 	
 	}
 }
+
+void buscarProducto(){
+	string nombreBuscar;
+	
+	cin.ignore();
+	
+	cout << "Digíte el nombre del producto a buscar: " << endl;
+	
+	getline(cin, nombreBuscar);
+	
+	int indice = buscarProducto(nombreBuscar);	
+	
+	if ( indice  != -1) {
+	
+	cout << endl;
+	
+	cout << "Producto encontrado: " << endl;
+	cout << "Nombre: " << productos[indice].nombre << endl;
+	cout << "Precio: $" << productos[indice].precio << endl;
+	
+	}else{
+		
+		cout << "Producto no encontrado. " << endl;
+		cin.ignore();
+	}	
+	
+}
 int main(){
 	int dc,m;
 	SetConsoleOutputCP(CP_UTF8);
@@ -104,12 +139,12 @@ int main(){
 			break;
 			
 			case 2: 
-			listarProductos(); //Agregando funcionalidad de listar productos
-
+			listarProductos(); 
 			break;
 			
 			case 3:
-			
+			buscarProducto(); //Agregando funcionalidad de buscar producto
+
 			break;
 			
 			case 4: 
