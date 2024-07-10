@@ -77,7 +77,8 @@ if(productos.empty()){
     
 		cout << "Nombre: "<<productos[i].nombre << endl;
 		cout << "Precio: $" << productos[i].precio << endl;
-	
+		cout << "----------------" << endl;
+		
 	}
 }
 
@@ -183,6 +184,27 @@ void registrarVenta(){
 	
 	ventas.push_back(m);
 }
+
+void listarVentas(){
+	
+	if(ventas.empty()){
+	
+	cout << "No hay ventas por el momento. " << endl;
+	return; 
+   
+    }
+
+	for(int i = 0; i < ventas.size(); i++) {
+	
+	cout << "IDventa: " << ventas[i].idVenta << endl;
+	cout << "Producto: " << ventas[i].producto << endl;
+	cout << "Cantidad: " << ventas[i].cantidad << endl;
+	cout << "Precio total: " << ventas[i].precioTotal << endl;
+	cout << "-----------------------------" << endl;
+	
+	}
+	
+}
 int main(){
 	int dc,m;
 	SetConsoleOutputCP(CP_UTF8);
@@ -232,11 +254,13 @@ int main(){
 			break;
 			
 			case 6: 
-			registrarVenta(); //Se agrega la funcionalidad de registrar una venta.
+			registrarVenta();
 
 			break;
 			
 			case 7:
+			listarVentas(); // Se agrega la funcionalidad de listar ventas.
+
 			break;
 			
 			case 8:
