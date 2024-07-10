@@ -162,6 +162,27 @@ void eliminarProducto(){
 		
 }
 
+void registrarVenta(){
+	Venta m;
+	
+	cin.ignore();
+	
+	cout << "Digíte el ID de la venta: " << endl;
+	cin >> m.idVenta;
+	
+	cin.ignore();
+
+	cout << "Digíte el nombre de la venta: " << endl;
+	getline(cin, m.producto);
+	
+	cout << "Digíte la cantidad de la venta: " << endl;
+	cin >> m.cantidad;
+		
+	cout << "Digíte el precio total de la venta: " << endl;
+	cin >> m.precioTotal;
+	
+	ventas.push_back(m);
+}
 int main(){
 	int dc,m;
 	SetConsoleOutputCP(CP_UTF8);
@@ -206,11 +227,13 @@ int main(){
 			break;
 
 			case 5:
-			eliminarProducto(); //Se agrega la funcionalidad de eliminar un producto.
+			eliminarProducto(); 
 
 			break;
 			
 			case 6: 
+			registrarVenta(); //Se agrega la funcionalidad de registrar una venta.
+
 			break;
 			
 			case 7:
