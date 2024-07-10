@@ -276,12 +276,17 @@ int main(){
 			break;
 			
 			case 8:
-			totalVentas(); //Se agrega la funcionalidad de calcular el total de ventas.
+			totalVentas(); 
 
 			break;
 			
 			case 9:
+			cout << "Saliendo..." << endl; //Se agrega la funcionalidad de salir del programa.
+			return 0;
 			break;
+			
+			default:
+			cout << "Ingresó número incorrecto. " << endl;
 		}
 	
 	cout << endl;
