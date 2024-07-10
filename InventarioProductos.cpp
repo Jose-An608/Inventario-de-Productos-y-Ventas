@@ -205,6 +205,18 @@ void listarVentas(){
 	}
 	
 }
+
+void totalVentas(){
+	
+	float t = 0;
+	for (int i = 0; i < ventas.size(); i++){
+		t += ventas[i].precioTotal;
+	}
+	
+	cout << "El total de ventas es: " << t << endl;
+	
+}
+
 int main(){
 	int dc,m;
 	SetConsoleOutputCP(CP_UTF8);
@@ -259,11 +271,13 @@ int main(){
 			break;
 			
 			case 7:
-			listarVentas(); // Se agrega la funcionalidad de listar ventas.
+			listarVentas(); 
 
 			break;
 			
 			case 8:
+			totalVentas(); //Se agrega la funcionalidad de calcular el total de ventas.
+
 			break;
 			
 			case 9:
